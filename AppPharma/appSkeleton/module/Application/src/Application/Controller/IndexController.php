@@ -13,7 +13,9 @@ class IndexController extends AbstractActionController
     public function indexAction()
             
     {
-        return new viewModel();
+         $unFormRecherche = new FormRecherche("Rechercher");
+        
+        return new ViewModel(array('uneRecherche'=>$unFormRecherche));
     }
     public function formMembreAction()
     {
@@ -30,12 +32,12 @@ class IndexController extends AbstractActionController
         
     }
     
-    public function formRechercheAction()
-    {
-        $unFormRecherche = new FormRecherche("Rechercher");
-        
-        return new ViewModel(array('uneRecherche'=>$unFormRecherche));
-    }
+//    public function formRechercheAction()
+//    {
+//        $unFormRecherche = new FormRecherche("Rechercher");
+//        
+//        return new ViewModel(array('uneRecherche'=>$unFormRecherche));
+//    }
     public function recevoirDonneesRechercheAction()
     {
         $recherche = $this->getRequest()->getPost('Recherche');

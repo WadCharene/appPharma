@@ -88,7 +88,12 @@ return array(
             
             //création du service manager TableGateway de Personne
             
-                    
+               'MbrmedocTableGateway'=>function($sm){
+                $adapter=$sm->get('Zend\Db\Adapter\Adapter');
+                $resultSetPrototype=new\Zend\Db\ResultSet\ResultSet();//création d'un ResultSet vide
+                $resultSetPrototype->setArrayObjectPrototype(new \Application\Model\Mbrmedoc());
+                return new \Zend\Db\TableGateway\TableGateway('Mbrmedoc', $adapter, null, $resultSetPrototype);
+            },     
             'MbrmedocTableCRUD'=> function ($sm){
                 $tableGateway=$sm->get('MbrmedocTableGateway');
                 $table=new \Application\Model\MbrmedocTable($tableGateway);

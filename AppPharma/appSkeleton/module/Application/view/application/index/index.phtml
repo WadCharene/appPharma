@@ -1,6 +1,20 @@
 <div id="blockMain">
 <h1>Ma pharmacies</h1>
-//<?php
+<a><img src="img/pharma.jpg"/>
+    
+ 
+<?php
+
+$recherche = $this->uneRecherche; // Etape n'est pas nécessaire 
+
+$recherche->setAttributes(['method'=>'POST','action'=>'recevoirDonneesRecherche']);
+        
+        
+$recherche->prepare();
+
+echo $this->form()->render($recherche);
+
+
 //   
 //    foreach ($this->tousLesMedocs as $objMedoc){
 //        echo "<br/><h3> Medoc :".$objMedoc->getNom()."  </h3>";
