@@ -1,0 +1,8 @@
+<?php
+
+if (isset($_SESSION['membre'])) {
+   echo 'Bienvenue, ' . $_SESSION['membre']['Prenom']; 
+}
+else {
+    echo $this->msg;
+}

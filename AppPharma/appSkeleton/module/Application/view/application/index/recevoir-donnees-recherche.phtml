@@ -1,0 +1,14 @@
+<?php
+//var_dump($this->unForm);
+echo "rechercher un medicament".'</br>';
+
+echo $this->nom.'<br/>';
+
+$medocs = $this->listeResultats;
+foreach($medocs as $objMedoc){
+    echo $objMedoc->getNom().'<br/>';
+}
+
+
+
+?>

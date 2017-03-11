@@ -1,0 +1,11 @@
+<?php
+
+$formulaire = $this->unForm; // Etape n'est pas nécessaire 
+
+$formulaire->setAttributes(['method'=>'POST','action'=>'recevoirDonneesMembre']);
+        
+        
+$formulaire->prepare();
+
+echo $this->form()->render($formulaire);
+

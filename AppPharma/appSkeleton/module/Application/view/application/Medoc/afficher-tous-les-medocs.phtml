@@ -1,0 +1,18 @@
+<div id="blockMain">
+<h1>Ma pharmacies</h1>
+<table>
+    <tr> 
+        <td>
+    <?php
+    $listeMedocs = $this->tousLesMedocs;
+   
+    foreach ( $listeMedocs as $objMedoc){
+        echo "<br/><h3> Nom :".$objMedoc->getNom()."  </h3>";
+    }
+    ?>   
+        </td>  
+    </tr>
+
+</table>
+</div>
+    
